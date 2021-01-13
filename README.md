@@ -16,6 +16,7 @@ Vanessa Lam | First Year
 **General Idea**  - A general description of what your software will do  
 We are creating a website that will list job postings that are relevant to MCIT students. They will be able to put in their desired field, skills, and whether they are looking for internship or full-time, and return a list of relevant job postings
 ​
+
 **Anticipated Stack** - What technologies do you anticipate using?  
 - Python
 - JavaScript
