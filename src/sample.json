@@ -1,0 +1,26 @@
+[
+    {
+        "jobTitle": "Front-End Software Engineer",
+        "company": "Cigna",
+        "location": "Philadelphia",
+        "link": "https://www.google.com/search?q=software+engineering+jobs&rlz=1C5CHFA_enUS871US871&oq=soft&aqs=chrome.0.69i59j69i57j35i39j0i67i395j0i395j69i65j69i61l2.4109j1j7&sourceid=chrome&ie=UTF-8&ibp=htl;jobs&sa=X&ved=2ahUKEwjJttLAqpnuAhUj11kKHV60AwgQutcGKAB6BAgDEAQ&sxsrf=ALeKk02t4XRRupTSyschIlT5LOeQyktZLg:1610555426391#htivrt=jobs&htidocid=41N2XaqUDbyztXwdAAAAAA%3D%3D&fpstate=tldetail",
+        "Qualifications": ["Python", "Go", "Rust", "R", "Scala"],
+        "educationRequired": "undergraduate"
+    },
+    {
+        "jobTitle": "Lead Software Engineer",
+        "company": "IT Pros",
+        "location": "Philadelphia",
+        "link": "https://www.google.com/search?q=software+engineering+jobs&rlz=1C5CHFA_enUS871US871&oq=soft&aqs=chrome.0.69i59j69i57j35i39j0i67i395j0i395j69i65j69i61l2.4109j1j7&sourceid=chrome&ie=UTF-8&ibp=htl;jobs&sa=X&ved=2ahUKEwjJttLAqpnuAhUj11kKHV60AwgQutcGKAB6BAgDEAQ&sxsrf=ALeKk02t4XRRupTSyschIlT5LOeQyktZLg:1610555426391#htivrt=jobs&htidocid=mWxHDrbNApV0ZDr8AAAAAA%3D%3D&fpstate=tldetail",
+        "Qualifications": ["ReactJS", "TypeScript", "Ruby on Rails API", "GraphQL"],
+        "educationRequired": "undergraduate"
+    },
+    {
+        "jobTitle": "Software Engineer, Apple Pay",
+        "company": "Apple",
+        "location": "New York",
+        "link": "https://www.google.com/search?q=software+engineering+jobs&rlz=1C5CHFA_enUS871US871&oq=soft&aqs=chrome.0.69i59j69i57j35i39j0i67i395j0i395j69i65j69i61l2.4109j1j7&sourceid=chrome&ie=UTF-8&ibp=htl;jobs&sa=X&ved=2ahUKEwjJttLAqpnuAhUj11kKHV60AwgQutcGKAB6BAgDEAQ&sxsrf=ALeKk02t4XRRupTSyschIlT5LOeQyktZLg:1610555426391#htivrt=jobs&fpstate=tldetail&htichips=city:Owg_06VPwoli_nfhBo8LyA%3D%3D,employment_type:FULLTIME,job_family_1:software%20engineer&htischips=city;Owg_06VPwoli_nfhBo8LyA%3D%3D:New%20York_comma_%20NY,employment_type;FULLTIME,job_family_1;software%20engineer&htidocid=5h-4XObAOFk82mFTAAAAAA%3D%3D",
+        "Qualifications": ["Java", "Scala", "SQL"],
+        "educationRequired": "undergraduate"
+    }
+]

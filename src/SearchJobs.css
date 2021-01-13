@@ -1,0 +1,14 @@
+.card-list {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px;
+
+}
+
+.card {
+    width: 20vw;
+    padding: 2rem 4rem;
+    border-radius: 10px;
+    box-shadow: 1px 1px 5px rgba(0,0,0,0.25);
+    margin: 20px;
+}
