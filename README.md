@@ -23,5 +23,6 @@ We are creating a website that will list job postings that are relevant to MCIT 
 - HTML + CSS
 - React
 ​
+
 **Presentation URL** - At the end of the hackathon, upload your presentation to YouTube/Vimeo (unlisted) and place it here.  
 Enter URL here
