@@ -1,7 +1,67 @@
 import './SearchJobs.css'
-import React, {useState} from "react"
+import React, {Component} from "react"
 
-function SearchJobs() {
+class SearchJobs extends Component {
+
+    state = {
+        jobs: []
+    }
+    componentDidMount() {
+        this.getJobs()
+    }
+
+    getJobs = () => {
+        const url = "http://localhost:8081/jobs"
+        fetch(url)
+            .then(response => response.json())
+            .then(response => this.setState({jobs: response}))
+            .catch (err => console.error(err))
+    }
+
+    renderJobs = (name) => <div className="job-card">
+        <div className="jobtitle">{name.jobtitle}</div>
+        <div className="company">{name.company}</div>
+        <div className="formattedLocation">{name.formattedLocation}</div>
+        <div className="date">{name.date}</div>
+        <div className="snippet">{name.snippet}</div>
+        <div className="url"><a href={name.url}>Visit Job</a></div>
+    </div>
+    render() {
+        const { jobs } = this.state;
+        return (
+            <div>
+                <form className="search-jobs">
+                    <label className="label" htmlFor="query">Job Title</label>
+                    <input className="input" type="text" name="query" 
+                    placeholder="i.e. Software Engineering"
+                    />
+                    <label className="label" htmlFor="query">Job Title</label>
+                    <input className="input" type="text" name="query" 
+                    placeholder="i.e. Software Engineering"
+                    />
+                    <label className="label" htmlFor="query">Job Title</label>
+                    <input className="input" type="text" name="query" 
+                    placeholder="i.e. Software Engineering"
+                    />
+                    <label className="label" htmlFor="query">Job Title</label>
+                    <input className="input" type="text" name="query" 
+                    placeholder="i.e. Software Engineering"
+                    />
+                    <button className="button" type="submit">Search</button>
+                </form>
+                <div>
+                    
+                </div>
+                <div className="card-container">
+                    {jobs.map(this.renderJobs)}
+                </div>
+            </div>
+            
+        )
+    }
+}
+
+{/*function SearchJobs() {
 
     const [query, setQuery] = useState("");
 
@@ -9,7 +69,7 @@ function SearchJobs() {
     async function searchJobs(e) {
         e.preventDefault()
         
-        const url = `https://api.themoviedb.org/3/search/movie?api_key=e51be93df8a5801d731cfb22c2c14a20&language=en-US&query=${query}&page=1&include_adult=false`
+        const url = `http://localhost:8081/emotions`
 
         try {
             const response = await fetch(url);
@@ -21,7 +81,10 @@ function SearchJobs() {
     }
     return (
         <div>
-            <form className="search-jobs" onSubmit={searchJobs}>
+
+
+
+                <form className="search-jobs" onSubmit={searchJobs}>
                 <label className="label" htmlFor="query">Job Title</label>
                 <input className="input" type="text" name="query" 
                 placeholder="i.e. Software Engineering"
@@ -37,10 +100,11 @@ function SearchJobs() {
                         <p className="description">Description: {job.overview}</p>
                     </div>
                 ))}
-            </div>
+            </div> 
         </div>
         
     )
 }
+*/}
 
 export default SearchJobs
