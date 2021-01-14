@@ -1,0 +1,13 @@
+{
+  "number":"one",
+  "array":[
+    {
+      "name":"Vanessa",
+      "age":27
+    },
+    {
+      "name":"Aldo",
+      "age":28
+    }
+  ]
+}
