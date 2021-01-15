@@ -21,8 +21,11 @@ class SearchJobs extends Component {
         this.getJobs()
     }
 
+    // const hostname = window.location.hostname;
+
     getJobs = () => {
-        const url = prod_url + "/products"
+//         const url = "http://localhost:3001/products"
+        const url = "https://hackathon2021-website.herokuapp.com/product"
         fetch(url)
             .then(response => response.json())
             .then(response => this.setState({jobs: response.data}))
