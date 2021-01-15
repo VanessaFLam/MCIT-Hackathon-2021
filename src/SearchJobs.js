@@ -23,7 +23,7 @@ class SearchJobs extends Component {
         const url = "http://localhost:3001/products"
         fetch(url)
             .then(response => response.json())
-            .then(response => this.setState({jobs: response}))
+            .then(response => this.setState({jobs: response.data}))
             .catch (err => console.error(err))
     }
 
@@ -36,16 +36,16 @@ class SearchJobs extends Component {
     }
 
     renderJobs = (name) => <div className="job-card">
-        <div className="firstName">{name.firstName}</div>
-        <div className="lastName">{name.lastName}</div>
-        <div className="gradDate">{name.gradDate}</div>
-        <div className="jobBefore">{name.jobBefore}</div>
-        <div className="jobAfter">{name.jobAfter}</div>
-        <div className="willMentor">{name.willMentor}</div>
-        <div className="contact">{name.contact}</div>
+        <div className="name">{name.firstName} {name.lastName}</div>
+        <div className="grad-date">Year of {name.gradDate}</div>
+        <div className="job-before"><strong>Job Before MCIT:</strong> {name.jobBefore}</div>
+        <div className="job-after"><strong>Job After MCIT:</strong> {name.jobAfter}</div>
+        <div className="will-mentor"><strong>Willing to Mentor:</strong> {name.willMentor}</div>
+        <div className="contact"><strong>Contact:</strong> {name.contact}</div>
     </div>
     render() {
         const { jobs, job } = this.state;
+        console.log(jobs);
         return (
             <div>
                 <form className="search-network">
@@ -115,12 +115,12 @@ class SearchJobs extends Component {
                     <button className="button" type="submit" onClick={this.addJob}>Submit</button>
                 </form>
                 
-                {/* <div className="card-container">
+                <div className="card-container">
                     {jobs.map(this.renderJobs)}
-                </div> */}
+                </div> 
             </div>
             
-        )
+      )
     }
 }
 

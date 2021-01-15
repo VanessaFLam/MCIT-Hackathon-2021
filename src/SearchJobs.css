@@ -12,6 +12,7 @@
 }
 
 .job-card {
+    min-width: 350px;
     width: 20vw;
     padding: 2rem 2rem;
     border-radius: 10px;
@@ -19,6 +20,27 @@
     margin: 20px;
 }
 
+.name {
+    width: fit-content;
+    font-size: 1.5rem;
+    padding-bottom: 5px;
+    border-bottom: 5px solid #ffce00;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.grad-date {
+    font-size: 0.8rem;
+    color: grey;
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+.job-before, .job-after, .will-mentor, .contact {
+    font-size: 1rem;
+    margin-bottom: 5px;
+    margin-top: 0;
+}
 
 form {
     display:grid;
@@ -47,10 +69,10 @@ form {
 }
 
 .button {
-    background-color: rgba(0,0,0,0.75);
+    background-color: #ffce00;
     color: white;
     padding: 0.5rem 1rem;
-    border: 1px solid rgba(0,0,0,0.75);
+    border: 1px solid #ffce00;
     border-radius: 20px;
     font-size: 1rem;
     cursor: pointer;
