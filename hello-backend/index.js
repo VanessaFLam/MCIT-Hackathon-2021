@@ -22,10 +22,22 @@ app.get('/apple', function (req, res) {
    res.send({ id: 0, name: 'gregory', gender: 'm' });
 })
 
+app.get("/jobs/add", (req, res) => {
+  const {id, name, price} = req.query;
+  const INSERT_JOBS_QUERY = `INSERT INTO heroku_bc546d54c5ccb15.test (id, name, price) VALUES('${id}', '${name}', '${price}')`
+  connection.query(INSERT_JOBS_QUERY, (err, results) => {
+    if(err) {
+      return res.send(err)
+    } else {
+      return res.send("successfully added")
+    }
+  })
+});
+
 app.use(cors());
 
 app.get('/jobs', function (req, res) {
-    con.query("SELECT * FROM heroku_bc546d54c5ccb15.samplejson3;", function (err, result) {
+    con.query("SELECT * FROM heroku_bc546d54c5ccb15.test;", function (err, result) {
         if (err) throw err;
         res.send(result);
       });

@@ -1,141 +1,123 @@
-import './SearchJobs.css';
-import React, {Component, useState, useEffect} from "react";
-import Axios from 'axios';
-
+import './SearchJobs.css'
+import React, {Component} from "react"
 
 class SearchJobs extends Component {
 
-        // var firstName = "",
-        // lastName = "",
-        // gradDate = "",
-        // jobBefore = "",
-        // jobAfter = "",
-        // willMentor = "",
-        // contact = ""
-
-    constructor() {
-        super();
-        this.state = {
+    state = {
+        jobs: [],
+        job: {
             firstName: "",
             lastName: "",
             gradDate: "",
             jobBefore: "",
             jobAfter: "",
             willMentor: "",
-            contact: "",
-        };
-        // var firstName = "",
-        // lastName = "",
-        // gradDate = "",
-        // jobBefore = "",
-        // jobAfter = "",
-        // willMentor = "",
-        // contact = ""
-    }
-
-    state = {
-        jobs: []
+            contact: ""
+        }
     }
     componentDidMount() {
         this.getJobs()
     }
 
     getJobs = () => {
-        const url = "http://localhost:8081/jobs"
+        const url = "http://localhost:3001/products"
         fetch(url)
             .then(response => response.json())
             .then(response => this.setState({jobs: response}))
             .catch (err => console.error(err))
     }
 
+    addJob = _ => {
+        const {job} = this.state;
+        fetch(`http://localhost:3001/api/insert?firstName=${job.firstName}&lastName=${job.lastName}&gradDate=${job.gradDate}&jobBefore=${job.jobBefore}&jobAfter=${job.jobAfter}&willMentor=${job.willMentor}&contact=${job.contact}`)
+            .then(response => response.json())
+            .then(this.getJobs)
+            .catch(err => console.error(err))
+    }
+
     renderJobs = (name) => <div className="job-card">
-        <div className="jobtitle">{name.jobtitle}</div>
-        <div className="company">{name.company}</div>
-        <div className="formattedLocation">{name.formattedLocation}</div>
-        <div className="date">{name.date}</div>
-        <div className="snippet">{name.snippet}</div>
-        <div className="url"><a href={name.url}>Visit Job</a></div>
+        <div className="firstName">{name.firstName}</div>
+        <div className="lastName">{name.lastName}</div>
+        <div className="gradDate">{name.gradDate}</div>
+        <div className="jobBefore">{name.jobBefore}</div>
+        <div className="jobAfter">{name.jobAfter}</div>
+        <div className="willMentor">{name.willMentor}</div>
+        <div className="contact">{name.contact}</div>
     </div>
-
-    submitData = () => {
-            Axios.post('http://localhost:3001/api/insert', {
-                firstName: firstName
-                , lastName: lastName
-                , gradDate: gradDate
-                , jobBefore: jobBefore
-                , jobAfter: jobAfter
-                , willMentor: willMentor
-                , contact: contact
-                }).then(() => {
-                    alert("successful insert");
-                });
-    //             this.setState({firstName: event.target.value});
-    //             this.setState({lastName: event.target.value});
-    //             this.setState({gradDate: event.target.value});
-    //             this.setState({jobBefore: event.target.value});
-    //             this.setState({jobAfter: event.target.value});
-    //             this.setState({willMentor: event.target.value});
-    //             this.setState({contact: event.target.value});
-    //     };
-
     render() {
-        const { jobs } = this.state;
-        // const [firstName, setFirstName] = useState("");
-        // const [lastName, setLastName] = useState("");
-        // const [gradDate, setGradDate] = useState("");
-        // const [jobBefore, setJobBefore] = useState("");
-        // const [jobAfter, setJobAfter] = useState("");
-        // const [willMentor, setWillMentor] = useState("");
-        // const [contact, setContact] = useState("");
-
-
+        const { jobs, job } = this.state;
         return (
-
             <div>
-                <form className="search-jobs">
+                <form className="search-network">
                     <label className="label" htmlFor="query">First Name</label>
-                    <input className="input" type="text" name="query" 
-                    placeholder="i.e. Jane" onChange={(e) => {
-                        firstName(e.target.value)
-                    }}/>
+                    <input className="input" 
+                    type="text" 
+                    name="query" 
+                    placeholder="i.e. Jane" 
+                    value={job.firstName} 
+                    onChange={e => this.setState({ job: {...job, firstName: e.target.value} })}
+                    />
+
                     <label className="label" htmlFor="query">Last Name</label>
-                    <input className="input" type="text" name="query" 
-                    placeholder="i.e. Doe" onChange={(e) => {
-                        lastName(e.target.value)
-                    }}/>
-                    <label className="label" htmlFor="query">(Expected) Graduation Year</label>
-                    <input className="input" type="text" name="query" 
-                    placeholder="i.e. 2019" onChange={(e) => {
-                        gradDate(e.target.value)
-                    }}/>
+                    <input className="input" 
+                    type="text" 
+                    name="query" 
+                    placeholder="i.e. Doe" 
+                    value={job.lastName} 
+                    onChange={e=>this.setState({ job: {...job, lastName: e.target.value} })}
+                    />
+
+                    <label className="label" htmlFor="query">Graduation Year</label>
+                    <input className="input" 
+                    type="text" 
+                    name="query" 
+                    placeholder="i.e. 2022" 
+                    value={job.gradDate} 
+                    onChange={e=>this.setState({ job: {...job, gradDate: e.target.value} })}
+                    />
+
                     <label className="label" htmlFor="query">Job Before MCIT</label>
-                    <input className="input" type="text" name="query" 
-                    placeholder="i.e. Software Engineering" onChange={(e) => {
-                        jobBefore(e.target.value)
-                    }}/>
+                    <input className="input" 
+                    type="text" 
+                    name="query" 
+                    placeholder="i.e. Software Engineer" 
+                    value={job.jobBefore} 
+                    onChange={e=>this.setState({ job: {...job, jobBefore: e.target.value} })}
+                    />
+
                     <label className="label" htmlFor="query">Job After MCIT</label>
-                    <input className="input" type="text" name="query" 
-                    placeholder="i.e. Software Engineering" onChange={(e) => {
-                        jobAfter(e.target.value)
-                    }}/>
-                    <label className="label" htmlFor="query">Willing to Mentor?</label>
-                    <input className="input" type="text" name="query" 
-                    placeholder="i.e. Yes/No" onChange={(e) => {
-                        willMentor(e.target.value)
-                    }}/>
-                    <label className="label" htmlFor="query">Contact</label>
-                    <input className="input" type="text" name="query" 
-                    placeholder="i.e. doejane@gmail.com" onChange={(e) => {
-                        contact(e.target.value)
-                    }}/>
-                    <button className="button" type="submit" onclick={submitData}>Submit</button> 
+                    <input className="input" 
+                    type="text" 
+                    name="query" 
+                    placeholder="i.e. Software Engineer" 
+                    value={job.jobAfter} 
+                    onChange={e=>this.setState({ job: {...job, jobAfter: e.target.value} })}
+                    />
+
+                    <label className="label" htmlFor="query">Willing to Mentor</label>
+                    <input className="input" 
+                    type="text" 
+                    name="query" 
+                    placeholder="i.e. Yes/No" 
+                    value={job.willMentor} 
+                    onChange={e=>this.setState({ job: {...job, willMentor: e.target.value} })}
+                    />
+
+                    <label className="label" htmlFor="query">Contact Info</label>
+                    <input className="input" 
+                    type="text" 
+                    name="query" 
+                    placeholder="i.e. doejane@gmail.com" 
+                    value={job.contact} 
+                    onChange={e=>this.setState({ job: {...job, contact: e.target.value} })}
+                    /> 
+
+                    <button className="button" type="submit" onClick={this.addJob}>Submit</button>
                 </form>
-                <div>
-                    
-                </div>
-                <div className="card-container">
+                
+                {/* <div className="card-container">
                     {jobs.map(this.renderJobs)}
-                </div>
+                </div> */}
             </div>
             
         )
