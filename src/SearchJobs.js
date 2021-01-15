@@ -35,13 +35,7 @@ class SearchJobs extends Component {
 
     addJob = _ => {
         const {job} = this.state;
-<<<<<<< HEAD
         fetch(prod_url + `/api/insert?firstName=${job.firstName}&lastName=${job.lastName}&gradDate=${job.gradDate}&jobBefore=${job.jobBefore}&jobAfter=${job.jobAfter}&willMentor=${job.willMentor}&contact=${job.contact}`)
-=======
-        // fetch(`http://localhost:80/api/insert?firstName=${job.firstName}&lastName=${job.lastName}&gradDate=${job.gradDate}&jobBefore=${job.jobBefore}&jobAfter=${job.jobAfter}&willMentor=${job.willMentor}&contact=${job.contact}`)
-        fetch(`https://hackathon2021-website.herokuapp.com/api/insert?firstName=${job.firstName}&lastName=${job.lastName}&gradDate=${job.gradDate}&jobBefore=${job.jobBefore}&jobAfter=${job.jobAfter}&willMentor=${job.willMentor}&contact=${job.contact}`)
-            .then(response => response.json())
->>>>>>> b923b66e994b09ba5dee0d6abd017656e4d972e5
             .then(this.getJobs)
             .catch(err => console.error(err))
     }
