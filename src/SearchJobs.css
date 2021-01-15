@@ -77,6 +77,9 @@ form {
     font-size: 1rem;
     cursor: pointer;
     transition: background-color 250ms;
+    grid-column: auto / span 2;
+    width: 200px;
+    margin: 30px auto 10px;
 }
 
 .button:hover {
