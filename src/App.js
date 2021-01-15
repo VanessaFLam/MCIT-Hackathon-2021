@@ -7,8 +7,10 @@ class App extends React.Component {
       return (
         <div className="container">
           <header>
-            <h1> MCIT Job Post</h1>
+            <h3>University of Pennsylvania, MCIT Program</h3>
+            <h1>Student Network</h1>
             <h4> <small>Made by Venessa and Shuke</small></h4>
+           
           </header>
           
           <SearchJobs />

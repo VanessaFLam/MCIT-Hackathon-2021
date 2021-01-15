@@ -3,10 +3,10 @@ var mysql = require('mysql');
 var cors = require("cors");
 
 var con = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "Zeng1998",
-  database: "sys"
+  host: "us-cdbr-east-03.cleardb.com",
+  user: "ba6481c1132e15",
+  password: "37d3184d",
+  database: "heroku_bc546d54c5ccb15"
 });
 
 con.connect(function(err) {
@@ -25,7 +25,7 @@ app.get('/apple', function (req, res) {
 app.use(cors());
 
 app.get('/jobs', function (req, res) {
-    con.query("select * from sys.jobs;", function (err, result) {
+    con.query("SELECT * FROM heroku_bc546d54c5ccb15.samplejson3;", function (err, result) {
         if (err) throw err;
         res.send(result);
       });

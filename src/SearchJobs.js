@@ -31,23 +31,35 @@ class SearchJobs extends Component {
         return (
             <div>
                 <form className="search-jobs">
-                    <label className="label" htmlFor="query">Job Title</label>
+                    <label className="label" htmlFor="query">First Name</label>
+                    <input className="input" type="text" name="query" 
+                    placeholder="i.e. Jane"
+                    />
+                    <label className="label" htmlFor="query">Last Name</label>
+                    <input className="input" type="text" name="query" 
+                    placeholder="i.e. Doe"
+                    />
+                    <label className="label" htmlFor="query">(Expected) Graduation Year</label>
+                    <input className="input" type="text" name="query" 
+                    placeholder="i.e. 2019"
+                    />
+                    <label className="label" htmlFor="query">Job Before MCIT</label>
                     <input className="input" type="text" name="query" 
                     placeholder="i.e. Software Engineering"
                     />
-                    <label className="label" htmlFor="query">Job Title</label>
+                    <label className="label" htmlFor="query">Job After MCIT</label>
                     <input className="input" type="text" name="query" 
                     placeholder="i.e. Software Engineering"
                     />
-                    <label className="label" htmlFor="query">Job Title</label>
+                    <label className="label" htmlFor="query">Willing to Mentor?</label>
                     <input className="input" type="text" name="query" 
-                    placeholder="i.e. Software Engineering"
+                    placeholder="i.e. Yes/No"
                     />
-                    <label className="label" htmlFor="query">Job Title</label>
+                    <label className="label" htmlFor="query">Contact</label>
                     <input className="input" type="text" name="query" 
-                    placeholder="i.e. Software Engineering"
+                    placeholder="i.e. doejane@gmail.com"
                     />
-                    <button className="button" type="submit">Search</button>
+                    <button className="button" type="submit">Submit</button>
                 </form>
                 <div>
                     
