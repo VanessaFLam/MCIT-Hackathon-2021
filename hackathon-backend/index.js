@@ -3,6 +3,8 @@ const cors = require('cors');
 const mysql = require('mysql');
 
 const app = express();
+// const port = process.env.PORT || 3001
+const port = 3001
 
 const SELECT_ALL_QUERY = 'SELECT * FROM mcit_alum_database';
 
@@ -57,7 +59,7 @@ app.get('/api/insert', (req,res) => {
 	});
 });
 
-app.listen(3001, () => {
+app.listen(port, () => {
 	console.log('products server listening on port 3001')
 });
 

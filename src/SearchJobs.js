@@ -19,8 +19,11 @@ class SearchJobs extends Component {
         this.getJobs()
     }
 
+    // const hostname = window.location.hostname;
+
     getJobs = () => {
         const url = "http://localhost:3001/products"
+        // const url = hostname + "/products" || "http://localhost:3001/products"
         fetch(url)
             .then(response => response.json())
             .then(response => this.setState({jobs: response.data}))
