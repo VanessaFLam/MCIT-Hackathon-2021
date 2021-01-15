@@ -38,15 +38,21 @@ app.get('/products', (req,res) => {
 	});
 });
 
-app.get('/products/add', (req,res) => {
-	const{ name, price } = req.query;
-	console.log(name,price);
-	const INSERT_PRODUCTS_QUERY = "INSERT INTO test (name, price) VALUES(?,?)"
-	connection.query(INSERT_PRODUCTS_QUERY, [name, price], (err,results) => {
+app.get('/api/insert', (req,res) => {
+	const{ firstName, lastName, gradDate, jobBefore, jobAfter, willMentor, contact } = req.query;
+	console.log(firstName, lastName, gradDate, jobBefore, jobAfter, willMentor, contact);
+	const INSERT_PRODUCTS_QUERY = "INSERT INTO mcit_alum_database (firstName, lastName, gradDate, jobBefore, jobAfter, willMentor, contact) VALUES(?,?,?,?,?,?,?)"
+	connection.query(INSERT_PRODUCTS_QUERY, [firstName
+											, lastName
+											, gradDate
+											, jobBefore
+											, jobAfter
+											, willMentor
+											, contact], (err,results) => {
 		if(err) {
 			return res.send(err)
 		} else {
-			return res.send('successfully added product')
+			return res.send('successfully added data')
 		}
 	});
 });
