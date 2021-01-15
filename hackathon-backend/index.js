@@ -4,7 +4,7 @@ const mysql = require('mysql');
 
 const app = express();
 
-const SELECT_ALL_QUERY = 'SELECT * FROM test';
+const SELECT_ALL_QUERY = 'SELECT * FROM mcit_alum_database';
 
 const connection = mysql.createConnection({
   host: "us-cdbr-east-03.cleardb.com",
