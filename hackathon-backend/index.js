@@ -28,17 +28,16 @@ app.get('/', (req,res) => {
 });
 
 app.get('/products', (req,res) => {
-	res.send("barbarbar")
-	// connection.query(SELECT_ALL_QUERY, (err, results) => {
-	// 	if(err) {
-	// 		return res.send(err)
-	// 	}
-	// 	else {
-	// 		return res.json({
-	// 			data:results
-	// 		})
-	// 	}
-	// });
+	connection.query(SELECT_ALL_QUERY, (err, results) => {
+		if(err) {
+			return res.send(err)
+		}
+		else {
+			return res.json({
+				data:results
+			})
+		}
+	});
 });
 
 app.get('/api/insert', (req,res) => {

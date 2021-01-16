@@ -19,11 +19,12 @@ class SearchJobs extends Component {
         this.getJobs()
     }
 
+    
     // const hostname = window.location.hostname;
 
     getJobs = () => {
-        fetch("/products")
-            .then(response => console.log("VL: " + response))
+        fetch("http://localhost:3001/products")
+            //.then(response => console.log("VL: " + response))
             .then(response => response.json())
             .then(response => this.setState({jobs: response.data}))
             .catch (err => console.error(err))
@@ -31,7 +32,7 @@ class SearchJobs extends Component {
 
     addJob = _ => {
         const {job} = this.state;
-        fetch(`/api/insert?firstName=${job.firstName}&lastName=${job.lastName}&gradDate=${job.gradDate}&jobBefore=${job.jobBefore}&jobAfter=${job.jobAfter}&willMentor=${job.willMentor}&contact=${job.contact}`)
+        fetch(`http://localhost:3001/api/insert?firstName=${job.firstName}&lastName=${job.lastName}&gradDate=${job.gradDate}&jobBefore=${job.jobBefore}&jobAfter=${job.jobAfter}&willMentor=${job.willMentor}&contact=${job.contact}`)
             .then(this.getJobs)
             .catch(err => console.error(err))
     }
