@@ -1,7 +1,7 @@
 import './SearchJobs.css'
 import React, {Component} from "react"
 
-const prod_url= 'https://hackathon2021-website.herokuapp.com/'; 
+const prod_url= 'https://hackathon2021-website.herokuapp.com:3001'; 
 
 class SearchJobs extends Component {
 
@@ -25,7 +25,8 @@ class SearchJobs extends Component {
 
     getJobs = () => {
         // const url = "http://localhost:3001/products"
-        const url = "https://hackathon2021-website.herokuapp.com/products"
+        // const url = "https://hackathon2021-website.herokuapp.com/products"
+        const url = "https://hackathon2021-website.herokuapp.com:3001/products"
         fetch(url)
             // .then(response => console.log("VL: " + response))
             .then(response => response.json())
