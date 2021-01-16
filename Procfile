@@ -1,2 +1,2 @@
-web: cd hackathon-backend && node index.js
+server: cd hackathon-backend && node index.js
 web: cd src && npm run start
