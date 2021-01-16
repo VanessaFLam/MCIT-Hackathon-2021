@@ -1,7 +1,6 @@
 import './SearchJobs.css'
 import React, {Component} from "react"
 
-
 class SearchJobs extends Component {
 
     state = {
