@@ -1,7 +1,6 @@
 import './SearchJobs.css'
 import React, {Component} from "react"
 
-const prod_url= 'https://hackathon2021-website.herokuapp.com/'; 
 
 class SearchJobs extends Component {
 
@@ -24,9 +23,8 @@ class SearchJobs extends Component {
     // const hostname = window.location.hostname;
 
     getJobs = () => {
-        // const url = "http://localhost:80/products"
-        const url = "https://hackathon2021-website.herokuapp.com/products"
-        fetch(url)
+        const url = 
+        fetch("/products")
             .then(response => console.log("VL: " + response))
             .then(response => response.json())
             .then(response => this.setState({jobs: response.data}))
@@ -35,13 +33,7 @@ class SearchJobs extends Component {
 
     addJob = _ => {
         const {job} = this.state;
-<<<<<<< HEAD
-        fetch(prod_url + `/api/insert?firstName=${job.firstName}&lastName=${job.lastName}&gradDate=${job.gradDate}&jobBefore=${job.jobBefore}&jobAfter=${job.jobAfter}&willMentor=${job.willMentor}&contact=${job.contact}`)
-=======
-        // fetch(`http://localhost:80/api/insert?firstName=${job.firstName}&lastName=${job.lastName}&gradDate=${job.gradDate}&jobBefore=${job.jobBefore}&jobAfter=${job.jobAfter}&willMentor=${job.willMentor}&contact=${job.contact}`)
-        fetch(`https://hackathon2021-website.herokuapp.com/api/insert?firstName=${job.firstName}&lastName=${job.lastName}&gradDate=${job.gradDate}&jobBefore=${job.jobBefore}&jobAfter=${job.jobAfter}&willMentor=${job.willMentor}&contact=${job.contact}`)
-            .then(response => response.json())
->>>>>>> b923b66e994b09ba5dee0d6abd017656e4d972e5
+        fetch(`/api/insert?firstName=${job.firstName}&lastName=${job.lastName}&gradDate=${job.gradDate}&jobBefore=${job.jobBefore}&jobAfter=${job.jobAfter}&willMentor=${job.willMentor}&contact=${job.contact}`)
             .then(this.getJobs)
             .catch(err => console.error(err))
     }
