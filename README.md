@@ -2,8 +2,6 @@
 ### Project/Team Name: Shuke Zeng & Vanessa Lam
 ##  
 ​
-*Remove the line below when committing your proposal*  
-**This proposal is due by the end of day on Wednesday Jan 13. This is here to get you to think about your project beforehand and for our record keeping.**
 ​
 **Team Members**  Use format below  
 Name | Year
@@ -18,10 +16,12 @@ We are creating a website that will list job postings that are relevant to MCIT 
 ​
 
 **Anticipated Stack** - What technologies do you anticipate using?  
-- Python
 - JavaScript
 - HTML + CSS
 - React
+- Node.js
+- Heroku
+- MySQL
 ​
 
 **Presentation URL** - At the end of the hackathon, upload your presentation to YouTube/Vimeo (unlisted) and place it here.  
