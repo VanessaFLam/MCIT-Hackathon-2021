@@ -76,67 +76,67 @@ class SearchJobs extends Component {
                 <form className="search-network">
                     <h3 className="form-title">Alumni/Current Students Information Form</h3>
                     <label className="label" htmlFor="query">First Name</label>
-                    <input className="input" 
-                    type="text" 
-                    name="query" 
-                    placeholder="i.e. Jane" 
-                    value={job.firstName} 
+                    <input className="input"
+                    type="text"
+                    name="query"
+                    placeholder="i.e. Jane"
+                    value={job.firstName}
                     onChange={e => this.setState({ job: {...job, firstName: e.target.value} })}
                     />
 
                     <label className="label" htmlFor="query">Last Name</label>
-                    <input className="input" 
-                    type="text" 
-                    name="query" 
-                    placeholder="i.e. Doe" 
-                    value={job.lastName} 
+                    <input className="input"
+                    type="text"
+                    name="query"
+                    placeholder="i.e. Doe"
+                    value={job.lastName}
                     onChange={e=>this.setState({ job: {...job, lastName: e.target.value} })}
                     />
 
                     <label className="label" htmlFor="query">Graduation Year</label>
-                    <input className="input" 
-                    type="text" 
-                    name="query" 
-                    placeholder="i.e. 2022" 
-                    value={job.gradDate} 
+                    <input className="input"
+                    type="text"
+                    name="query"
+                    placeholder="i.e. 2022"
+                    value={job.gradDate}
                     onChange={e=>this.setState({ job: {...job, gradDate: e.target.value} })}
                     />
 
                     <label className="label" htmlFor="query">Job Before MCIT</label>
-                    <input className="input" 
-                    type="text" 
-                    name="query" 
-                    placeholder="i.e. Software Engineer" 
-                    value={job.jobBefore} 
+                    <input className="input"
+                    type="text"
+                    name="query"
+                    placeholder="i.e. Software Engineer"
+                    value={job.jobBefore}
                     onChange={e=>this.setState({ job: {...job, jobBefore: e.target.value} })}
                     />
 
                     <label className="label" htmlFor="query">Job After MCIT</label>
-                    <input className="input" 
-                    type="text" 
-                    name="query" 
-                    placeholder="i.e. Software Engineer" 
-                    value={job.jobAfter} 
+                    <input className="input"
+                    type="text"
+                    name="query"
+                    placeholder="i.e. Software Engineer"
+                    value={job.jobAfter}
                     onChange={e=>this.setState({ job: {...job, jobAfter: e.target.value} })}
                     />
 
                     <label className="label" htmlFor="query">Willing to Mentor</label>
-                    <input className="input" 
-                    type="text" 
-                    name="query" 
-                    placeholder="i.e. Yes/No" 
-                    value={job.willMentor} 
+                    <input className="input"
+                    type="text"
+                    name="query"
+                    placeholder="i.e. Yes/No"
+                    value={job.willMentor}
                     onChange={e=>this.setState({ job: {...job, willMentor: e.target.value} })}
                     />
 
                     <label className="label" htmlFor="query">Contact Info</label>
-                    <input className="input" 
-                    type="text" 
-                    name="query" 
-                    placeholder="i.e. doejane@gmail.com" 
-                    value={job.contact} 
+                    <input className="input"
+                    type="text"
+                    name="query"
+                    placeholder="i.e. doejane@gmail.com"
+                    value={job.contact}
                     onChange={e=>this.setState({ job: {...job, contact: e.target.value} })}
-                    /> 
+                    />
 
                     <button className="button" type="submit" onClick={this.addJob}>Submit</button>
                 </form>
@@ -164,9 +164,9 @@ class SearchJobs extends Component {
 
                 <div className="card-container">
                     {jobs.map(this.renderJobs)}
-                </div> 
+                </div>
             </div>
-            
+
       )
     }
 }
@@ -178,7 +178,7 @@ class SearchJobs extends Component {
     const [jobs, setJobs] = useState([]);
     async function searchJobs(e) {
         e.preventDefault()
-        
+
         const url = `http://localhost:8081/emotions`
 
         try {
@@ -196,7 +196,7 @@ class SearchJobs extends Component {
 
                 <form className="search-jobs" onSubmit={searchJobs}>
                 <label className="label" htmlFor="query">Job Title</label>
-                <input className="input" type="text" name="query" 
+                <input className="input" type="text" name="query"
                 placeholder="i.e. Software Engineering"
                 value={query} onChange={(e) => setQuery(e.target.value)}
                 />
@@ -210,9 +210,9 @@ class SearchJobs extends Component {
                         <p className="description">Description: {job.overview}</p>
                     </div>
                 ))}
-            </div> 
+            </div>
         </div>
-        
+
     )
 }
 */}

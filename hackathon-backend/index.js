@@ -3,23 +3,23 @@ const cors = require('cors');
 const mysql = require('mysql');
 
 const app = express();
-// const port = process.env.PORT || 3001
-const port = 3001
+const port = process.env.PORT || 3001
+// const port = 3001
 
 
 
-const connection = mysql.createConnection({
+const connection = mysql.createPool({
   host: "us-cdbr-east-03.cleardb.com",
   user: "ba6481c1132e15",
   password: "37d3184d",
   database: "heroku_bc546d54c5ccb15"
 });
 
-connection.connect(err => {
-	if(err) {
-		return err;
-	}
-});
+// connection.connect(err => {
+// 	if(err) {
+// 		return err;
+// 	}
+// });
 
 app.use(cors());
 
