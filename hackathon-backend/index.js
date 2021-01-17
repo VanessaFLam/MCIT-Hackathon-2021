@@ -9,10 +9,10 @@ const port = process.env.PORT || 3001
 
 
 const connection = mysql.createPool({
-  host: "us-cdbr-east-03.cleardb.com",
-  user: "ba6481c1132e15",
-  password: "37d3184d",
-  database: "heroku_bc546d54c5ccb15"
+  host: "localhost",
+  user: "root",
+  password: "jobs",
+  database: "jobboard"
 });
 
 // connection.connect(err => {
