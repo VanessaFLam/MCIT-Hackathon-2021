@@ -25,4 +25,4 @@ We are creating a website that will list job postings that are relevant to MCIT 
 ​
 
 **Presentation URL** - At the end of the hackathon, upload your presentation to YouTube/Vimeo (unlisted) and place it here.  
-Enter URL here
+https://youtu.be/j1l9DdNIndI
