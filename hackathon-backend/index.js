@@ -6,7 +6,7 @@ const app = express();
 // const port = process.env.PORT || 3001
 const port = 3001
 
-const SELECT_ALL_QUERY = 'SELECT * FROM mcit_alum_database';
+
 
 const connection = mysql.createConnection({
   host: "us-cdbr-east-03.cleardb.com",
@@ -28,6 +28,7 @@ app.get('/', (req,res) => {
 });
 
 app.get('/products', (req,res) => {
+	const SELECT_ALL_QUERY = 'SELECT * FROM mcit_alum_database';
 	connection.query(SELECT_ALL_QUERY, (err, results) => {
 		if(err) {
 			return res.send(err)
@@ -39,6 +40,22 @@ app.get('/products', (req,res) => {
 		}
 	});
 });
+
+app.get('/api/filter', (req,res) => {
+	const{ gradDate, willMentor } = req.query;
+	console.log(gradDate, willMentor);
+	const FILTER_PRODUCTS_QUERY = "SELECT * FROM mcit_alum_database WHERE gradDate LIKE ? AND willMentor LIKE ?"
+	connection.query(FILTER_PRODUCTS_QUERY, [gradDate, willMentor], (err,results) => {
+		if(err) {
+			return res.send(err)
+		} else {
+			console.log(results)
+			return res.json({data:results})
+		}
+	});
+});
+
+
 
 app.get('/api/insert', (req,res) => {
 	const{ firstName, lastName, gradDate, jobBefore, jobAfter, willMentor, contact } = req.query;

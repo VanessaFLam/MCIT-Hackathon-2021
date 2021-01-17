@@ -42,6 +42,10 @@
     margin-top: 0;
 }
 
+.form-title {
+    grid-column: auto / span 2;
+
+}
 form {
     display:grid;
     width: 30vw;
@@ -54,12 +58,30 @@ form {
     padding: 20px;
 }
 
+.filter {
+    display:grid;
+    align-items: center;
+    width: 80vw;
+    min-width: 500px;
+    margin: auto;
+    margin-bottom: 50px;
+    border-radius: 10px;
+    grid-template: auto auto / 200px auto 200px auto;
+    box-shadow: 1px 1px 5px rgba(0,0,0,0.25);
+    padding: 20px;
+}
+
+
 .label {
     font-size: 1rem;
     margin-bottom: 0.2rem;
 }
+.filter-label {
+    margin-bottom: 0;
+}
 
-.input {
+
+.input, .filter-input {
     font-size: 1rem;
     padding: 0.5rem 2rem;
     line-height: 1.2rem;
@@ -68,7 +90,12 @@ form {
     margin-bottom: 1rem;
 }
 
-.button {
+.filter-input {
+    margin-bottom: 0;
+    margin-right: 20px;
+}
+
+.button, .filter-button {
     background-color: #ffce00;
     color: white;
     padding: 0.5rem 1rem;
@@ -82,9 +109,20 @@ form {
     margin: 30px auto 10px;
 }
 
-.button:hover {
+.filter-buttom {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.filter-button {
+    grid-column: auto / span 4;
+}
+
+.button:hover, .filter-button:hover {
     background-color: rgba(0,0,0,0.85);
 }
+
+
 
 @media (min-width:500px){
     form {
